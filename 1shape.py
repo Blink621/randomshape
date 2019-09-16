@@ -340,7 +340,7 @@ def random_shapes(image_shape,
 #%% 生成图片
 import matplotlib.pyplot as plt
 
-file = open('E:\python\Program\information.txt','w') #创建一个txt文档，向其中写入信息
+file = open('E:\information.txt','w') #创建一个txt文档，向其中写入信息
 n=0
 while n < 2:
     
