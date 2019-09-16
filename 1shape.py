@@ -338,7 +338,7 @@ def random_shapes(image_shape,
       
 #%% 生成图片
 import matplotlib.pyplot as plt
-
+file = open('E:\python\Program\information.txt','w') #创建一个txt文档，向其中写入信息
 
 n=0
 while n < 2:
@@ -367,5 +367,11 @@ while n < 2:
         plt.subplots_adjust(top = 1, bottom = 0, right = 1, left = 0, hspace = 0, wspace = 0)
         plt.margins(0,0)
         filename='%d.png'%n
+        L=[]
+        for b in labels[0][1]:
+            c=list(b)
+            for d in c:
+                L.append(float('%.2f'%d))
+        file.write('picture:{}  Shape: {}      Angle:{:.2f}    Location:{}     Color:{}    Size:{}\n'.format(n,labels[0][0],angle,L,colors[0],shape))
         fig.savefig(fname=filename,format='png', transparent=True, dpi=2800, pad_inches = 0)
         plt.close('all')
